@@ -1,21 +1,41 @@
 ﻿
 import React, { Component } from 'react';
 
-import { TopBar } from './views';
-import { Menu } from './views';
+//import { Animate } from './tests';
+import DatePicker from 'antd/lib/date-picker';
 
-import Routes from './Routes.js';
+import "antd/lib/date-picker/style/css.js";
+
+
+function onChange(date, dateStr) {
+	console.log(date);
+	console.log(dateStr);
+}
+
+
+
 
 class App extends Component {
 
 	//designer
 	render() {
-		return (<div>
-			<TopBar />
-			<Menu />
-			<Routes />
-		</div>)
+
+		return (
+			<div>
+				<DatePicker onChange={onChange} />
+			</div>
+		)
+
 	}
+
+
+	componentDidMount() {
+
+		//
+
+	}
+
+
 }
 
 export default App;

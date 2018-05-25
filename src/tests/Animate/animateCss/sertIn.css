@@ -1,0 +1,20 @@
+﻿.sertIn-enter,
+.sertIn-appear {
+	height:0;
+	transition:.5s;
+}
+	.sertIn-enter.sertIn-enter-active,
+	.sertIn-appear.sertIn-appear-active {
+		height:20px;
+		transition: .5s;
+	}
+
+.sertIn-leave {
+	height: 20px;
+	transition: .5s;
+}
+
+.sertIn-leave.sertIn-leave-active{
+	height:0;
+	transition: height .5s ease-in;
+}
