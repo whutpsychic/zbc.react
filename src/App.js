@@ -2,27 +2,48 @@
 import React, { Component } from 'react';
 
 //import { Animate } from './tests';
-import DatePicker from 'antd/lib/date-picker';
+import { Date} from './tests/Antd';
 
-import "antd/lib/date-picker/style/css.js";
-
-
-function onChange(date, dateStr) {
-	console.log(date);
-	console.log(dateStr);
-}
-
-
-
+import Menu from './tests/Menua';
 
 class App extends Component {
+
+	constructor() {
+		super(...arguments);
+
+		this.state = {
+			menuData :[
+				{ name: "xxxx", text: "menu1" },
+				{ name: "qqqq", text: "menu2" },
+				{
+					name: "wwww", text: "menu3", children: [
+						{ name: "aaaa", text: "menu3-1" },
+						{ name: "ssss", text: "menu3-2" },
+					]
+				},
+				{
+					name: "eeee", text: "menu4", children: [
+						{ name: "aaaa", text: "menu4-1" },
+						{ name: "ssss", text: "menu4-2" },
+					]
+				}
+			]
+		}
+	}
+
+
+
+
 
 	//designer
 	render() {
 
+		const { menuData } = this.state;
+
 		return (
 			<div>
-				<DatePicker onChange={onChange} />
+				<Menu data={menuData} />
+<Date />
 			</div>
 		)
 
@@ -32,7 +53,14 @@ class App extends Component {
 	componentDidMount() {
 
 		//
+		//setTimeout(() => {
+		//	console.log("hell");
 
+
+		//	this.setState({
+		//		menuData:[]
+		//	})
+		//},3000)
 	}
 
 

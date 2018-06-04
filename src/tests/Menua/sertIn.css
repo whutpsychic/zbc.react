@@ -1,0 +1,79 @@
+﻿.menu,
+.menu li {
+	position: relative;
+	transition: .1s;
+}
+
+.menu span {
+	display: block;
+	overflow: hidden;
+}
+
+/*.menu-level1-enter,
+.menu-level1-appear {
+	height:0;
+	transition:.1s;
+}
+	.menu-level1-enter.menu-level1-enter-active,
+	.menu-level1-appear.menu-level1-appear-active {
+		height:21px;
+		transition: .1s;
+	}
+
+.menu-level1-leave {
+	height: 21px;
+	transition: .1s;
+}
+
+.menu-level1-leave.menu-level1-leave-active{
+	height:0;
+	transition: height .1s ease-in;
+}*/
+
+
+
+
+.menu-level1-enter,
+.menu-level1-appear {
+	right:80px;
+	transition:.1s;
+}
+	.menu-level1-enter.menu-level1-enter-active,
+	.menu-level1-appear.menu-level1-appear-active {
+		right: 0;
+		transition: .1s;
+	}
+
+.menu-level1-leave {
+	right: 0;
+	transition: .1s;
+}
+
+	.menu-level1-leave.menu-level1-leave-active {
+		right: 80px;
+		transition: .1s;
+	}
+
+
+
+.menu-level2-enter > li,
+.menu-level2-appear > li {
+	height: 0;
+	transition: .1s;
+}
+
+	.menu-level2-enter.menu-level2-enter-active > li,
+	.menu-level2-appear.menu-level2-appear-active > li {
+		height: 21px;
+		transition: .1s;
+	}
+
+.menu-level2-leave > li {
+	height: 21px;
+	transition: .1s;
+}
+
+.menu-level2-leave.menu-level2-leave-active > li {
+	height: 0;
+	transition: .1s;
+}
