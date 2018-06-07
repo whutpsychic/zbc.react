@@ -171,9 +171,36 @@ class Menu extends Component {
 
 	}
 
+	componentWillMount() {
+		console.log('componentWillMount');
+	}
+
+	//1
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps)
+		console.log('componentWillReceiveProps');
+	}
+
+	//2
+	shouldComponentUpdate(nextProps, nextState) {
+		console.log(nextProps, nextState)
+		console.log('shouldComponentUpdate');
+
+		return true;
+	}
+
+	//3
+	componentWillUpdate() {
+		console.log('componentWillUpdate');
+	}
+
+	//4
+	componentDidUpdate() {
+		console.log('componentDidUpdate');
+	}
 
 	componentDidMount() {
-
+		console.log('componentDidMount');
 	}
 
 

@@ -43,24 +43,54 @@ class App extends Component {
 		return (
 			<div>
 				<Menu data={menuData} />
-<Date />
+				<Date />
 			</div>
 		)
-
 	}
 
 
+	componentWillMount() {
+		console.log('componentWillMount');
+	}
+
+	componentWillReceiveProps(nextProps) {
+		console.log(nextProps)
+		console.log('componentWillReceiveProps');
+	}
+
+	//1
+	shouldComponentUpdate(nextProps, nextState) {
+		console.log(nextProps, nextState)
+		console.log('shouldComponentUpdate');
+
+		return true;
+	}
+
+	//2
+	componentWillUpdate() {
+		console.log('componentWillUpdate');
+	}
+
+	componentDidUpdate() {
+		console.log('componentDidUpdate');
+	}
+
 	componentDidMount() {
-
-		//
-		//setTimeout(() => {
-		//	console.log("hell");
-
-
-		//	this.setState({
-		//		menuData:[]
-		//	})
-		//},3000)
+		console.log('componentDidMount');
+		setTimeout(() => {
+			this.setState({
+				menuData: [
+					{ name: "xxxx", text: "menu1" },
+					{ name: "qqqq", text: "menu2" },
+					{
+						name: "wwww", text: "menu3", children: [
+							{ name: "aaaa", text: "menu3-1" },
+							{ name: "ssss", text: "menu3-2" },
+						]
+					}
+				]
+			})
+		}, 1000);
 	}
 
 
