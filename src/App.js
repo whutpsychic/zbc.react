@@ -2,9 +2,9 @@
 import React, { Component } from 'react';
 
 //import { Animate } from './tests';
-import { Date} from './tests/Antd';
+//import ComponentContainer from './tests/context';
+import { TodoList } from './tests/ToDos';
 
-import Menu from './tests/Menua';
 
 class App extends Component {
 
@@ -12,85 +12,71 @@ class App extends Component {
 		super(...arguments);
 
 		this.state = {
-			menuData :[
-				{ name: "xxxx", text: "menu1" },
-				{ name: "qqqq", text: "menu2" },
-				{
-					name: "wwww", text: "menu3", children: [
-						{ name: "aaaa", text: "menu3-1" },
-						{ name: "ssss", text: "menu3-2" },
-					]
-				},
-				{
-					name: "eeee", text: "menu4", children: [
-						{ name: "aaaa", text: "menu4-1" },
-						{ name: "ssss", text: "menu4-2" },
-					]
-				}
+			list: [
+				{ id: 'id1', text: "text1", complete: false },
+				{ id: 'id2', text: "text2", complete: false },
+				{ id: 'id3', text: "text3", complete: false },
+				{ id: 'id4', text: "text4", complete: false },
+				{ id: 'id5', text: "text5", complete: false },
+				{ id: 'id6', text: "text6", complete: false },
+				{ id: 'id7', text: "text7", complete: false }
 			]
 		}
+
 	}
-
-
-
 
 
 	//designer
 	render() {
 
-		const { menuData } = this.state;
+
 
 		return (
 			<div>
-				<Menu data={menuData} />
-				<Date />
+				<TodoList list={this.state.list}/>
 			</div>
 		)
 	}
 
 
 	componentWillMount() {
-		console.log('componentWillMount');
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log(nextProps)
-		console.log('componentWillReceiveProps');
 	}
 
 	//1
 	shouldComponentUpdate(nextProps, nextState) {
-		console.log(nextProps, nextState)
-		console.log('shouldComponentUpdate');
-
 		return true;
 	}
 
 	//2
 	componentWillUpdate() {
-		console.log('componentWillUpdate');
 	}
 
 	componentDidUpdate() {
-		console.log('componentDidUpdate');
 	}
 
 	componentDidMount() {
-		console.log('componentDidMount');
+
 		setTimeout(() => {
+
+			console.log(2)
 			this.setState({
-				menuData: [
-					{ name: "xxxx", text: "menu1" },
-					{ name: "qqqq", text: "menu2" },
-					{
-						name: "wwww", text: "menu3", children: [
-							{ name: "aaaa", text: "menu3-1" },
-							{ name: "ssss", text: "menu3-2" },
-						]
-					}
+				list: [
+					{ id: 'id1', text: "text1", complete: false },
+					{ id: 'id2', text: "text22", complete: false },
+					{ id: 'id7', text: "text73", complete: false }
 				]
 			})
-		}, 1000);
+		},3000)
+
+
+
+
+
+
+
 	}
 
 
