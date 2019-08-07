@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 const addNumber = (state = 0, action) => {
 	switch (action.type) {
 		case "ADD_NUMBER":
@@ -36,4 +25,4 @@ const renderNumber = (state = 0, action) => {
 	}
 };
 
-export { addNumber, reduceNumber, renderNumber };
+export default { addNumber, reduceNumber, renderNumber };
